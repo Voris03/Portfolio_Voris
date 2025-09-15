@@ -3,8 +3,9 @@ import { SectionTitle } from "../../../components/SectionTitle";
 import FlexWrapper from "../../../components/FlexWrapper";
 import socialImg from "../../../assets/images/project1.webp";
 import timerImg from "../../../assets/images/project2.webp";
-import statusEst from "../../../assets/images/status_estate.jpg"
-import CleanMW from "../../../assets/images/cleanmywin.webp"
+import statusEst from "../../../assets/images/status_estate.jpg";
+import goGift from "../../../assets/images/goGift.jpeg";
+import CleanMW from "../../../assets/images/cleanmywin.webp";
 import Work from "./work/Work";
 import Container from "../../../components/Container";
 import TabMenu, { TabsStatusType } from "./tabMenu/TabMenu";
@@ -34,24 +35,24 @@ const tabsItems: Array<{
 ];
 
 const worksData = [
-  {
-    title: "Social Network",
-    src: socialImg,
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    type: "spa",
-    id: 1,
-  },
-  {
-    title: "Timer",
-    src: timerImg,
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    type: "react",
-    id: 2,
-  },
+  // {
+  //   title: "Social Network",
+  //   src: socialImg,
+  //   text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  //   type: "spa",
+  //   id: 1,
+  // },
+  // {
+  //   title: "Timer",
+  //   src: timerImg,
+  //   text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+  //   type: "react",
+  //   id: 2,
+  // },
   {
     title: "Nc Invest",
     src: statusEst,
-    text:"Адаптивный одностраничный сайт для продвижения недвижимости на Северном Кипре. Проект выполнен с использованием HTML, CSS и JavaScript, включает интерактивные элементы, такие как слайдер и форма обратной связи, обеспечивая удобство использования и современный дизайн.",
+    text: "Адаптивный одностраничный сайт для продвижения недвижимости на Северном Кипре. Проект выполнен с использованием HTML, CSS и JavaScript, включает интерактивные элементы, такие как слайдер и форма обратной связи, обеспечивая удобство использования и современный дизайн.",
     type: "landing",
     id: 3,
     codeLink: "https://github.com/Voris03/Status_Estate",
@@ -60,11 +61,20 @@ const worksData = [
   {
     title: "Cleanmywin",
     src: CleanMW,
-    text:"Одностраничное веб-приложение для продажи автомобилей, используя Next.js и библиотеку Chakra UI. Проект относится к категории SPA (Single Page Application), обеспечивая быструю загрузку, удобную навигацию и современный пользовательский интерфейс.",
+    text: "Одностраничное веб-приложение для продажи автомобилей, используя Next.js и библиотеку Chakra UI. Проект относится к категории SPA (Single Page Application), обеспечивая быструю загрузку, удобную навигацию и современный пользовательский интерфейс.",
     type: "spa",
     id: 4,
     codeLink: "https://github.com/Voris03/Cleanmyvin",
-    demoLink: "https://voris03.github.io/Status_Estate/",
+    demoLink: "",
+  },
+  {
+    title: "GoGift",
+    src: goGift,
+    text: "Telegram app. Разработано на Next.js и библиотеке Chakra UI.",
+    type: "react",
+    id: 5,
+    codeLink: "",
+    demoLink: "https://t.me/gogift_official_bot",
   },
 ];
 
@@ -105,12 +115,18 @@ const Works: React.FC = () => {
                 <motion.div
                   layout
                   initial={{ opacity: 0 }}
-    
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   key={w.id}
                 >
-                  <Work title={w.title} src={w.src} text={w.text} key={w.id} codeLink={w.codeLink} demoLink={w.demoLink}/>
+                  <Work
+                    title={w.title}
+                    src={w.src}
+                    text={w.text}
+                    key={w.id}
+                    codeLink={w.codeLink}
+                    demoLink={w.demoLink}
+                  />
                 </motion.div>
               );
             })}
