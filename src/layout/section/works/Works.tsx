@@ -5,6 +5,7 @@ import socialImg from "../../../assets/images/project1.webp";
 import timerImg from "../../../assets/images/project2.webp";
 import statusEst from "../../../assets/images/status_estate.jpg";
 import goGift from "../../../assets/images/goGift.jpeg";
+import BelImport from "../../../assets/images/BelImport.png";
 import CleanMW from "../../../assets/images/cleanmywin.webp";
 import Work from "./work/Work";
 import Container from "../../../components/Container";
@@ -75,6 +76,15 @@ const worksData = [
     id: 5,
     codeLink: "",
     demoLink: "https://t.me/gogift_official_bot",
+  },
+  {
+    title: "BelImport",
+    src: BelImport,
+    text: "B2B веб-сайт для поставки запчастей и ремонта спецтехники. Разработан на Next.js и Chakra UI с адаптивным интерфейсом и lead-generation функционалом.",
+    type: "react",
+    id: 6,
+    codeLink: "",
+    demoLink: "https://belimport-front.vercel.app/",
   },
 ];
 
