@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local knowledge base (LLM Wiki)
+/wiki
+/raw
+/AGENTS.md
