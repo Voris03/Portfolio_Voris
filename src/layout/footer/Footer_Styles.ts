@@ -10,7 +10,7 @@ const Footer = styled.footer`
 
 const Name = styled.span`
   ${font({
-    family: '"Josefin Sans", sans-serif',
+    family: theme.fonts.title,
     weight: 700,
     Fmax: 22,
     Fmin: 16,

@@ -1,33 +1,38 @@
 import React from "react";
 import { S } from "./../HeaderMenu_Styles";
+import { useLanguage } from "../../../../i18n/LanguageContext";
+import { TranslationsType } from "../../../../i18n/translations";
 
-const items = [
+const items: Array<{ key: keyof TranslationsType["menu"]; href: string }> = [
   {
-    title: "Home",
+    key: "home",
     href: "home",
   },
   {
-    title: "Skills",
+    key: "skills",
     href: "skills",
   },
   {
-    title: "Works",
+    key: "works",
     href: "works",
   },
   {
-    title: "Testimony",
+    key: "testimony",
     href: "testimony",
   },
   {
-    title: "Contact",
+    key: "contact",
     href: "contact",
   },
 ];
 
 export const Menu: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <ul>
       {items.map((item, index: number) => {
+        const title = t.menu[item.key];
         return (
           <S.MenuItem key={index}>
             <S.NavLink
@@ -37,12 +42,12 @@ export const Menu: React.FC = () => {
               spy={true}
               offset={10}
             >
-              {item.title}
+              {title}
               <S.Mask>
-                <span>{item.title}</span>
+                <span>{title}</span>
               </S.Mask>
               <S.Mask>
-                <span>{item.title}</span>
+                <span>{title}</span>
               </S.Mask>
             </S.NavLink>
           </S.MenuItem>

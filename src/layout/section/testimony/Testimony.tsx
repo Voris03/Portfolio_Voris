@@ -6,12 +6,15 @@ import Slider from "../../../components/slider/Slider";
 import FlexWrapper from "../../../components/FlexWrapper";
 import { S } from "../skills/Skills_Styles";
 import Container from "../../../components/Container";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 const Testimony: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <StyledTestimony id={"testimony"}>
       <Container>
-        <SectionTitle>Testimony</SectionTitle>
+        <SectionTitle>{t.testimony.title}</SectionTitle>
 
         <FlexWrapper direction={"column"} align={"center"}>
           <S.IconWrapper>
@@ -27,7 +30,7 @@ const Testimony: React.FC = () => {
 const StyledTestimony = styled.section`
   position: relative;
   ${S.IconWrapper} {
-    margin: 35px 0 72px;
+    margin: 35px 0 56px;
   }
 `;
 

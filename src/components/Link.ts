@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import theme from "../styles/Theme";
 
-export const Link = styled.a<{ active?: boolean }>`
+// $active is a transient prop: styled-components does not pass it to the DOM
+export const Link = styled.a<{ $active?: boolean }>`
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -32,8 +33,8 @@ export const Link = styled.a<{ active?: boolean }>`
     transition: ${theme.animations.transition};
 
     ${(props) =>
-      props.active &&
-      css<{ active?: boolean }>`
+      props.$active &&
+      css`
         height: 10px;
       `}
   }

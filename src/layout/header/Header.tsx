@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../../components/logo/logo";
 import Container from "../../components/Container";
 import FlexWrapper from "../../components/FlexWrapper";
+import LangSwitch from "../../components/langSwitch/LangSwitch";
 import MobileMenu from "./headerMenu/mobileMenu/MobileMenu";
 import { S } from "./Header_Styles";
 import DesktopMenu from "./headerMenu/desktopMenu/DesktopMenu";
@@ -14,14 +15,17 @@ const Header: React.FC = () => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
-  }, []); 
+  }, []);
 
   return (
     <S.Header>
       <Container>
         <FlexWrapper justify={"space-between"} align={"center"}>
           <Logo />
-          {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}
+          <S.Controls>
+            {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}
+            <LangSwitch />
+          </S.Controls>
         </FlexWrapper>
       </Container>
     </S.Header>

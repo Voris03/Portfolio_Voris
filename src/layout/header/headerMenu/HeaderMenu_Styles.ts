@@ -28,7 +28,7 @@ const Mask = styled.span`
 `;
 
 const NavLink = styled(Link)`
-  font-family: "Josefin Sans", sans-serif;
+  font-family: ${theme.fonts.title};
   font-size: 30px;
   font-weight: 400;
   text-align: center;

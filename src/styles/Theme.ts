@@ -17,6 +17,12 @@ const theme = {
         desktop: "screen and (max-width: 1140px)",
     },
 
+    // Poppins and Josefin Sans have no Cyrillic: Russian glyphs come from Montserrat
+    fonts: {
+        main: '"Poppins", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        title: '"Josefin Sans", "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    },
+
     animations: {
         transition: ".2s ease-in-out",
     }

@@ -14,35 +14,44 @@ const Works = styled.section`
   }
 `;
 
+// flex item animated by framer-motion when the filter changes
+const WorkMotion = styled(motion.div)`
+  width: calc(50% - 15px);
+  align-self: stretch;
+
+  @media ${theme.media.tablet} {
+    width: 100%;
+  }
+`;
+
 // Work
 
-const Work = styled(motion.div)`
+const Work = styled.div`
   text-align: left;
   background-color: ${theme.colors.secondBg};
-  width: 330px;
-  max-width: 540px;
   width: 100%;
-  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   ${Link} {
     padding: 10px 0;
-
-    & + ${Link} {
-      margin-left: 20px;
-    }
-  }
-
-  @media ${theme.media.desktop} {
-    max-width: 540px;
   }
 `;
 
 const Description = styled.div`
   padding: 25px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
-const ImageWrapper = styled.div`
+const ImageWrapper = styled.a`
+  display: block;
+  width: 100%;
   position: relative;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -51,13 +60,15 @@ const ImageWrapper = styled.div`
     right: 0;
     bottom: 0;
     top: 0;
+    z-index: 1;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     opacity: 0;
     transition: ${theme.animations.transition};
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     &::before {
       opacity: 1;
     }
@@ -65,17 +76,17 @@ const ImageWrapper = styled.div`
     ${Button} {
       opacity: 1;
     }
-
-    a {
-      opacity: 1;
-    }
   }
 
   ${Button} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     position: absolute;
     left: 50%;
     top: 50%;
+    z-index: 2;
     transform: translate(-50%, -40%);
     transition: ${theme.animations.transition};
 
@@ -83,17 +94,6 @@ const ImageWrapper = styled.div`
       width: 100%;
       height: 100%;
     }
-  }
-
-  a {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    transition: ${theme.animations.transition};
-    background: transparent;
   }
 
   @media ${theme.media.tablet} {
@@ -105,30 +105,47 @@ const ImageWrapper = styled.div`
       opacity: 1;
       transform: translate(-50%, -50%);
     }
-
-    a {
-      opacity: 1;
-    }
   }
 `;
 
 const Image = styled.img`
+  display: block;
   width: 100%;
   height: 260px;
+  object-fit: cover;
+  object-position: top;
 `;
 
 const Title = styled.h3``;
 
 const Text = styled.p`
-  margin: 14px 0 10px;
+  margin: 14px 0 12px;
+`;
+
+const Stack = styled.span`
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: ${theme.colors.accent};
+`;
+
+const Links = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: auto;
 `;
 
 export const S = {
   Works,
+  WorkMotion,
   Work,
   Description,
   ImageWrapper,
   Image,
   Title,
   Text,
+  Stack,
+  Links,
 };

@@ -20,14 +20,14 @@ const MainTitle = styled.h1`
 `;
 
 const SmallText = styled.h2`
-  font-family: "Poppins", sans-serif;
+  font-family: ${theme.fonts.main};
   font-size: 14px;
   font-weight: 400;
 `;
 
 const Name = styled.h2`
   ${font({
-    family: "'Josefin Sans', sans-serif",
+    family: theme.fonts.title,
     weight: 700,
     Fmax: 50,
     Fmin: 36,

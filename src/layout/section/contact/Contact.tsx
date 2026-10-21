@@ -4,8 +4,10 @@ import { Button } from "../../../components/Button";
 import Container from "../../../components/Container";
 import { S } from "./Contact_Styles";
 import emailjs from "@emailjs/browser";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
   const form = useRef<ElementRef<"form">>(null);
 
   const sendEmail = (e: any) => {
@@ -31,13 +33,13 @@ const Contact: React.FC = () => {
   return (
     <S.Contact id={"contact"}>
       <Container>
-        <SectionTitle>Contact</SectionTitle>
+        <SectionTitle>{t.contact.title}</SectionTitle>
         <S.Form ref={form} onSubmit={sendEmail}>
-          <S.Field required placeholder={"name"} name={'user_name'}/>
-          <S.Field required placeholder={"email"} name={'email'}/>
-          <S.Field required placeholder={"subject"} name={'subject'}/>
-          <S.Field required placeholder={"message"} as={"textarea"} name={'message'}/>
-          <Button type={"submit"}>Send message</Button>
+          <S.Field required placeholder={t.contact.name} name={'user_name'}/>
+          <S.Field required placeholder={t.contact.email} name={'email'} type={'email'}/>
+          <S.Field required placeholder={t.contact.subject} name={'subject'}/>
+          <S.Field required placeholder={t.contact.message} as={"textarea"} name={'message'}/>
+          <Button type={"submit"}>{t.contact.send}</Button>
         </S.Form>
       </Container>
     </S.Contact> 

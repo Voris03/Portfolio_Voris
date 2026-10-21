@@ -13,9 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         margin: 0;
-        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+        font-family: ${theme.fonts.main};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: ${theme.colors.font};
@@ -57,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h3 {
-        font-family: "Josefin Sans", sans-serif;
+        font-family: ${theme.fonts.title};
         font-size: 16px;
         font-weight: 700;
         letter-spacing: 1px;

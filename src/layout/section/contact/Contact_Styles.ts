@@ -26,7 +26,7 @@ const Field = styled.input`
   border: 1px solid ${theme.colors.borderColor};
   padding: 7px 15px;
 
-  font-family: "Poppins", sans-serif;
+  font-family: ${theme.fonts.main};
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.05em;

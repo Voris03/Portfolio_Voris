@@ -10,7 +10,7 @@ type FontPropsType = {
 }
 
 export const font = ({family, weight, color, lineHeight, Fmin, Fmax}: FontPropsType) => `
-    font-family: ${family || "Poppins"};
+    font-family: ${family || theme.fonts.main};
     font-weight: ${weight || 400};
     color: ${color || theme.colors.font};
     line-height: ${lineHeight || 1.2};

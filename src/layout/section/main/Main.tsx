@@ -5,25 +5,31 @@ import Container from "../../../components/Container";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
 import { S } from "./Main_Styles";
+import { useLanguage } from "../../../i18n/LanguageContext";
 
 const Main: React.FC = () => {
+  const { lang, t } = useLanguage();
+
   return (
     <S.Main id={"home"}>
       <Container>
         <FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"}>
           <S.Wrapper>
-            <S.SmallText>Hi There!</S.SmallText>
+            <S.SmallText>{t.main.greeting}</S.SmallText>
             <S.Name>
-              I am <span>Vladimir Vidus</span>
+              {t.main.iAm} <span>{t.main.name}</span>
             </S.Name>
             <S.MainTitle>
-              <p>A Frontend Developer.</p>
+              <p>{t.main.role}</p>
+              {/* key remounts Typewriter: it ignores new strings after start */}
               <Typewriter
+                key={lang}
                 options={{
-                  strings: ["A Frontend Developer."],
+                  strings: t.main.typewriter,
                   autoStart: true,
                   loop: true,
-                  delay: 100,
+                  delay: 70,
+                  deleteSpeed: 30,
                 }}
               />
             </S.MainTitle>
@@ -39,7 +45,7 @@ const Main: React.FC = () => {
             gyroscope={true}
           >
             <S.PhotoWrapper>
-              <S.Photo src={main} alt="" />
+              <S.Photo src={main} alt={t.main.photoAlt} />
             </S.PhotoWrapper>
           </Tilt>
         </FlexWrapper>

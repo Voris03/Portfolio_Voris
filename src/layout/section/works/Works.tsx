@@ -1,128 +1,172 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { SectionTitle } from "../../../components/SectionTitle";
 import FlexWrapper from "../../../components/FlexWrapper";
-import socialImg from "../../../assets/images/project1.webp";
-import timerImg from "../../../assets/images/project2.webp";
-import statusEst from "../../../assets/images/status_estate.jpg";
+import Modal from "../../../components/modal/Modal";
+import guessPredict from "../../../assets/images/guesspredict.webp";
+import skylineStroi from "../../../assets/images/skylinestroi.webp";
+import arctech from "../../../assets/images/arctech.webp";
+import belImport from "../../../assets/images/belimport.webp";
 import goGift from "../../../assets/images/goGift.jpeg";
-import BelImport from "../../../assets/images/BelImport.png";
-import CleanMW from "../../../assets/images/cleanmywin.webp";
+import statusEst from "../../../assets/images/status_estate.jpg";
+import cleanMW from "../../../assets/images/cleanmywin.webp";
+import uksRechica from "../../../assets/images/uksrechica.webp";
 import Work from "./work/Work";
 import Container from "../../../components/Container";
 import TabMenu, { TabsStatusType } from "./tabMenu/TabMenu";
 import { S } from "./Works_Styles";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { Localized, useLanguage } from "../../../i18n/LanguageContext";
 
-const tabsItems: Array<{
-  status: TabsStatusType;
+const tabsStatuses: Array<TabsStatusType> = ["all", "web", "site", "cms"];
+
+type WorkType = {
+  id: number;
   title: string;
-}> = [
-  {
-    title: "All",
-    status: "all",
-  },
-  {
-    title: "Landing Page",
-    status: "landing",
-  },
-  {
-    title: "React",
-    status: "react",
-  },
-  {
-    title: "SPA",
-    status: "spa",
-  },
-];
+  src: string;
+  text: Localized;
+  stack: string;
+  type: Exclude<TabsStatusType, "all">;
+  // no demoLink — the demo button opens the "demo is not available" modal
+  demoLink?: string;
+};
 
-const worksData = [
-  // {
-  //   title: "Social Network",
-  //   src: socialImg,
-  //   text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-  //   type: "spa",
-  //   id: 1,
-  // },
-  // {
-  //   title: "Timer",
-  //   src: timerImg,
-  //   text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-  //   type: "react",
-  //   id: 2,
-  // },
+// Source code is never linked: the code button always opens the NDA modal
+const worksData: Array<WorkType> = [
   {
-    title: "Nc Invest",
-    src: statusEst,
-    text: "Адаптивный одностраничный сайт для продвижения недвижимости на Северном Кипре. Проект выполнен с использованием HTML, CSS и JavaScript, включает интерактивные элементы, такие как слайдер и форма обратной связи, обеспечивая удобство использования и современный дизайн.",
-    type: "landing",
-    id: 3,
-    codeLink: "https://github.com/Voris03/Status_Estate",
-    demoLink: "https://voris03.github.io/Status_Estate/",
+    id: 7,
+    title: "GuessPredict",
+    src: guessPredict,
+    text: {
+      en: "A prediction market where people bet on sports, crypto and world events. I worked on the event catalog, live price charts, trading and the user's portfolio — all updating in real time.",
+      ru: "Рынок предсказаний: ставки на спорт, крипту и мировые события. Я делал каталог событий, живые графики цен, торговлю и портфель пользователя — всё обновляется в реальном времени.",
+    },
+    stack: "Next.js · TypeScript · TanStack Query · Effector · Mantine · WebSockets · Go",
+    type: "web",
+    demoLink: "https://guesspredict.com/",
   },
   {
-    title: "Cleanmywin",
-    src: CleanMW,
-    text: "Одностраничное веб-приложение для продажи автомобилей, используя Next.js и библиотеку Chakra UI. Проект относится к категории SPA (Single Page Application), обеспечивая быструю загрузку, удобную навигацию и современный пользовательский интерфейс.",
-    type: "spa",
-    id: 4,
-    codeLink: "https://github.com/Voris03/Cleanmyvin",
-    demoLink: "",
+    id: 8,
+    title: "SkyLineStroi",
+    src: skylineStroi,
+    text: {
+      en: "Website for a Minsk construction company: roofing, facades, fences and terraces. Visitors can look through real projects, play with a 3D configurator and send a request in one step.",
+      ru: "Сайт строительной компании из Минска: кровля, фасады, заборы, террасы. Можно посмотреть реальные объекты, покрутить 3D-конфигуратор и оставить заявку в один шаг.",
+    },
+    stack: "Next.js · React · Responsive layout",
+    type: "site",
+    demoLink: "https://skylinestroi.by/",
   },
   {
+    id: 9,
+    title: "Arctech",
+    src: arctech,
+    text: {
+      en: "Online catalog of industrial refrigeration equipment and CAREL automation for a Belarusian supplier: search, cart, knowledge base and a light/dark theme.",
+      ru: "Онлайн-каталог промышленного холодильного оборудования и автоматики CAREL для белорусского поставщика: поиск, корзина, база знаний и светлая/тёмная тема.",
+    },
+    stack: "Next.js · React · Responsive layout",
+    type: "web",
+    demoLink: "https://arctech.by/",
+  },
+  {
+    id: 6,
+    title: "BelImport",
+    src: belImport,
+    text: {
+      en: "Website for a company that supplies spare parts and repairs heavy machinery. The main goal was simple: make it easy for a visitor to leave a request.",
+      ru: "Сайт компании, которая поставляет запчасти и ремонтирует спецтехнику. Главная задача была простой — чтобы посетителю было легко оставить заявку.",
+    },
+    stack: "Next.js · Chakra UI",
+    type: "site",
+    demoLink: "https://belimport-front.vercel.app/",
+  },
+  {
+    id: 5,
     title: "GoGift",
     src: goGift,
-    text: "Telegram app. Разработано на Next.js и библиотеке Chakra UI.",
-    type: "react",
-    id: 5,
-    codeLink: "",
+    text: {
+      en: "A Telegram mini app for a gift bot. I built the interface, connected it to the backend API and covered the key components with tests.",
+      ru: "Telegram-приложение для бота подарков. Сделал интерфейс, подключил backend API и покрыл ключевые компоненты тестами.",
+    },
+    stack: "Next.js · Chakra UI · Telegram Mini Apps",
+    type: "web",
     demoLink: "https://t.me/gogift_official_bot",
   },
   {
-    title: "BelImport",
-    src: BelImport,
-    text: "B2B веб-сайт для поставки запчастей и ремонта спецтехники. Разработан на Next.js и Chakra UI с адаптивным интерфейсом и lead-generation функционалом.",
-    type: "react",
-    id: 6,
-    codeLink: "",
-    demoLink: "https://belimport-front.vercel.app/",
+    id: 3,
+    title: "Nc Invest",
+    src: statusEst,
+    text: {
+      en: "One-page website about real estate in Northern Cyprus. Plain HTML, CSS and JavaScript, with a slider and a contact form.",
+      ru: "Одностраничный сайт о недвижимости на Северном Кипре. Чистые HTML, CSS и JavaScript, слайдер и форма обратной связи.",
+    },
+    stack: "HTML · CSS · JavaScript",
+    type: "site",
+    demoLink: "https://voris03.github.io/Status_Estate/",
+  },
+  {
+    id: 4,
+    title: "Cleanmywin",
+    src: cleanMW,
+    text: {
+      en: "Single-page app for selling cars: loads fast, simple to navigate, nothing extra.",
+      ru: "Одностраничное приложение для продажи автомобилей: быстро грузится, просто устроено, ничего лишнего.",
+    },
+    stack: "Next.js · Chakra UI",
+    type: "web",
+  },
+  {
+    id: 10,
+    title: "UKS Rechica",
+    src: uksRechica,
+    text: {
+      en: "I maintain the website of a capital construction department on Joomla: update content, add pages and make sure everything keeps working.",
+      ru: "Веду сайт управления капитального строительства на Joomla: обновляю контент, добавляю страницы и слежу, чтобы всё работало.",
+    },
+    stack: "Joomla · CMS · HTML · CSS",
+    type: "cms",
+    demoLink: "https://uksrechica.by/",
   },
 ];
 
+type ModalStateType = {
+  kind: "code" | "demo";
+  project: string;
+} | null;
+
 const Works: React.FC = () => {
-  const [currentFilterStatus, setCurrentFilterStatus] = useState("all");
-  let filteredWorks = worksData;
+  const { lang, t } = useLanguage();
+  const [currentFilterStatus, setCurrentFilterStatus] =
+    useState<TabsStatusType>("all");
+  const [modal, setModal] = useState<ModalStateType>(null);
 
-  if (currentFilterStatus === "landing") {
-    filteredWorks = worksData.filter((work) => work.type === "landing");
-  }
+  const filteredWorks =
+    currentFilterStatus === "all"
+      ? worksData
+      : worksData.filter((work) => work.type === currentFilterStatus);
 
-  if (currentFilterStatus === "react") {
-    filteredWorks = worksData.filter((work) => work.type === "react");
-  }
+  const tabsItems = tabsStatuses.map((status) => ({
+    status,
+    title: t.works.tabs[status],
+  }));
 
-  if (currentFilterStatus === "spa") {
-    filteredWorks = worksData.filter((work) => work.type === "spa");
-  }
-
-  function changeFilterStatus(value: TabsStatusType) {
-    setCurrentFilterStatus(value);
-  }
+  const closeModal = useCallback(() => setModal(null), []);
 
   return (
     <S.Works id={"works"}>
       <Container>
-        <SectionTitle>My Works</SectionTitle>
+        <SectionTitle>{t.works.title}</SectionTitle>
         <TabMenu
           tabsItems={tabsItems}
-          changeFilterStatus={changeFilterStatus}
+          changeFilterStatus={setCurrentFilterStatus}
           currentFilterStatus={currentFilterStatus}
         />
 
         <FlexWrapper justify="space-between" align={"flex-start"} wrap={"wrap"}>
           <AnimatePresence>
-            {filteredWorks.map((w, index) => {
+            {filteredWorks.map((w) => {
               return (
-                <motion.div
+                <S.WorkMotion
                   layout
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -132,17 +176,26 @@ const Works: React.FC = () => {
                   <Work
                     title={w.title}
                     src={w.src}
-                    text={w.text}
-                    key={w.id}
-                    codeLink={w.codeLink}
+                    text={w.text[lang]}
+                    stack={w.stack}
                     demoLink={w.demoLink}
+                    onCodeClick={() => setModal({ kind: "code", project: w.title })}
+                    onDemoClick={() => setModal({ kind: "demo", project: w.title })}
                   />
-                </motion.div>
+                </S.WorkMotion>
               );
             })}
           </AnimatePresence>
         </FlexWrapper>
       </Container>
+
+      <Modal
+        isOpen={modal !== null}
+        label={modal?.kind === "code" ? `${modal.project} · ${t.works.nda}` : modal?.project}
+        title={modal?.kind === "code" ? t.modal.codeTitle : t.modal.demoTitle}
+        text={modal?.kind === "code" ? t.modal.codeText : t.modal.demoText}
+        onClose={closeModal}
+      />
     </S.Works>
   );
 };
