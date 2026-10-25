@@ -26,7 +26,8 @@ const en = {
       "React · Next.js · TypeScript.",
       "Backend experience with Go.",
     ],
-    photoAlt: "Vladimir Vidus",
+    slogan: ["Turning ideas", "into fast,", "clean interfaces"],
+    sloganCaption: "// code that works",
   },
   skills: {
     title: "My Skills",
@@ -105,7 +106,8 @@ const ru: TranslationsType = {
       "React · Next.js · TypeScript.",
       "Опыт backend на Go.",
     ],
-    photoAlt: "Владимир Видус",
+    slogan: ["Превращаю идеи", "в быстрые,", "чистые интерфейсы"],
+    sloganCaption: "// код, который работает",
   },
   skills: {
     title: "Мои навыки",

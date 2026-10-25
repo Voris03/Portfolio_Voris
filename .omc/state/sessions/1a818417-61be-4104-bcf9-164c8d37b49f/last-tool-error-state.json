@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd ~/projects/web2cam/back; grep -E '\\\"db:migrate\\\"' package.json; ls -d migrations db 2>/dev/null; ls migrations 2>/dev/null | head; ls ../.github/workflows 2>/dev/null\",\"description\":\"Ch...",
+  "error": "Exit code 1\n    \"db:migrate\": \"prisma migrate deploy\",",
+  "timestamp": "2026-10-25T19:37:47.705Z",
+  "retry_count": 1
+}

@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "jobId": "d4b9c9b9-ffd4-4536-837c-09b0c1716956",
+  "sessionId": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+  "scopeKey": "e690ae42297aac1abff7cd19c238b71bb5d94496296ee4074cb89d1afc24eae1",
+  "revision": 44,
+  "createdAt": "2026-10-21T16:18:26.871Z",
+  "updatedAt": "2026-10-25T20:48:55.282Z",
+  "producerGraceExpiresAt": "2026-10-21T16:18:56.872Z",
+  "bestEffortDeadlineAt": "2026-10-21T16:19:47.872Z",
+  "producers": {
+    "core": {
+      "state": "sealed",
+      "intentKey": "32284a753cc17e375e6e640982753e4c0406ead5b6f028544f1ae10792fc295c",
+      "payloadDigest": "32284a753cc17e375e6e640982753e4c0406ead5b6f028544f1ae10792fc295c",
+      "sealedAt": "2026-10-21T16:18:26.906Z",
+      "sealedBy": "foreground"
+    },
+    "wiki": {
+      "state": "no-op",
+      "sealedAt": "2026-10-21T16:18:26.871Z",
+      "sealedBy": "wiki-producer"
+    }
+  },
+  "actions": {
+    "foreground-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "febf6dba2f2536433960a07f7cedce72e946b43ced0896570df80f017b8914d2",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {},
+        "foregroundResult": {
+          "removedTransientFiles": 2,
+          "completedAt": "2026-10-21T16:18:26.906Z"
+        }
+      },
+      "budgetMs": 9000,
+      "completedAt": "2026-10-21T16:18:26.906Z",
+      "lastOutcomeCode": "completed"
+    },
+    "wiki-capture": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "1719cd1ef5b51e0269b78c4cb8c9308c9c1f7b82fd1c067fc034c060f23863f5",
+      "payload": {},
+      "budgetMs": 9000,
+      "completedAt": "2026-10-21T16:18:26.871Z"
+    },
+    "team-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "cee6ac31df545408e1e822247ac249b3f8182a98a5fe8e448ae3b251e55bdee1",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-21T16:18:26.966Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "8b1acc0d-8a2f-46c0-b5d6-00a4bdd010f8",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-21T16:18:36.931Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-21T16:18:27.098Z"
+    },
+    "python-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "1f1370c4ac056606059d517e2f106b602d8cbcb04587b3fcc5f3b9f89e649cd0",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-21T16:18:27.113Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "6a74691e-da73-42b8-bbb5-34facbfd9ff6",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-21T16:18:36.931Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-21T16:18:27.275Z"
+    },
+    "reply-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "0b3a8b47c28b26d56aca004d4f572b96c118f16819c0d35162418816f9a5420a",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-10-21T16:18:27.294Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "8f6c3b2a-f1cc-4879-be38-81d22df038fa",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-21T16:18:36.931Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-21T16:18:27.410Z"
+    },
+    "callback": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "d068ede2655bf89e0c0950e087d0603d7dcf45538e94f20a654d08c6f4841895",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-21T16:18:27.425Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "86b8ec03-5c1a-41d5-bcc9-f09eff0e06f8",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-21T16:18:36.931Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-21T16:18:27.546Z"
+    },
+    "notification": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "89c0438ff63097ce04beb60efb87292ff68a7af350a0ee331f3de9dbf42d62fc",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-21T16:18:27.560Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "d00fe9a2-e42a-48c1-ae08-8b476d8a3840",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-21T16:18:36.931Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-21T16:18:27.700Z"
+    },
+    "openclaw": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "31fe8f6e1cf204e27006de511df257326fdd98655122ca437013e8779ffc735b",
+      "payload": {
+        "transcriptPath": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+        "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+        "reason": "other",
+        "input": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "transcript_path": "/Users/vovavidus/.claude/projects/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc.jsonl",
+          "cwd": "/Users/vovavidus/projects/Portfolio_Voris",
+          "scratchpad_dir": "/private/tmp/claude-501/-Users-vovavidus-projects-Portfolio-Voris/1e04f848-7bbf-4edc-bf03-f39ef53b70bc/scratchpad",
+          "prompt_id": "b61370b2-c43e-4ca1-bc5d-d776a986a030",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "1e04f848-7bbf-4edc-bf03-f39ef53b70bc",
+          "ended_at": "2026-10-21T16:18:26.870Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-10-21T16:18:27.721Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "9ebf4e88-2128-48ce-9812-fa144bdb06b6",
+        "phase": "terminal",
+        "deadlineAt": "2026-10-21T16:18:36.931Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-10-21T16:18:27.860Z"
+    }
+  },
+  "owner": null,
+  "phase": "complete",
+  "completion": {
+    "completedAt": "2026-10-21T16:18:27.880Z",
+    "terminalDigest": "4c5ea53aed366663e5e7b5b4cd9583827dcb0e8008240ef6a6ab256a605dc97c",
+    "terminalRevision": 40
+  }
+}

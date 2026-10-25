@@ -26,3 +26,6 @@ yarn-error.log*
 /wiki
 /raw
 /AGENTS.md
+
+# CV sources and PDFs (contain personal phone number)
+/cv

@@ -1,5 +1,4 @@
 import React from "react";
-import main from "../../../assets/images/ava.webp";
 import FlexWrapper from "../../../components/FlexWrapper";
 import Container from "../../../components/Container";
 import Typewriter from "typewriter-effect";
@@ -44,9 +43,24 @@ const Main: React.FC = () => {
             scale={1.1}
             gyroscope={true}
           >
-            <S.PhotoWrapper>
-              <S.Photo src={main} alt={t.main.photoAlt} />
-            </S.PhotoWrapper>
+            <S.CardWrapper>
+              <S.SloganCard>
+                <S.CodeMark aria-hidden="true">{"</>"}</S.CodeMark>
+                <S.SloganText>
+                  {t.main.slogan.map((line, i) =>
+                    i === t.main.slogan.length - 1 ? (
+                      <span key={i}>{line}</span>
+                    ) : (
+                      <React.Fragment key={i}>
+                        {line}
+                        <br />
+                      </React.Fragment>
+                    )
+                  )}
+                </S.SloganText>
+                <S.Caption>{t.main.sloganCaption}</S.Caption>
+              </S.SloganCard>
+            </S.CardWrapper>
           </Tilt>
         </FlexWrapper>
       </Container>

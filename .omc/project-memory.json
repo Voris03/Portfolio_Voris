@@ -1,0 +1,192 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1792956410211,
+  "projectRoot": "/Users/vovavidus/projects/Portfolio_Voris",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "18.3.1",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.3.1",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "yarn",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "yarn build",
+    "testCommand": "yarn test",
+    "lintCommand": null,
+    "devCommand": "yarn start",
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "build": {
+      "path": "build",
+      "purpose": "Build output",
+      "fileCount": 7,
+      "lastAccessed": 1792956410198,
+      "keyFiles": [
+        "asset-manifest.json",
+        "favicon.ico",
+        "favicon.svg",
+        "index.html",
+        "manifest.json"
+      ]
+    },
+    "cv": {
+      "path": "cv",
+      "purpose": null,
+      "fileCount": 5,
+      "lastAccessed": 1792956410199,
+      "keyFiles": [
+        "Vladimir_Vidus_CV_EN.pdf",
+        "Vladimir_Vidus_CV_RU.pdf",
+        "cv.css",
+        "cv_en.html",
+        "cv_ru.html"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 6,
+      "lastAccessed": 1792956410200,
+      "keyFiles": [
+        "favicon.ico",
+        "favicon.svg",
+        "index.html",
+        "manifest.json",
+        "robots.txt"
+      ]
+    },
+    "raw": {
+      "path": "raw",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1792956410201,
+      "keyFiles": []
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 10,
+      "lastAccessed": 1792956410201,
+      "keyFiles": [
+        "App.css",
+        "App.test.tsx",
+        "App.tsx",
+        "index.css",
+        "index.tsx"
+      ]
+    },
+    "wiki": {
+      "path": "wiki",
+      "purpose": null,
+      "fileCount": 11,
+      "lastAccessed": 1792956410201,
+      "keyFiles": [
+        "architecture.md",
+        "build-and-quality.md",
+        "cv.md",
+        "decisions.md",
+        "index.md"
+      ]
+    },
+    "build/static": {
+      "path": "build/static",
+      "purpose": "Static files",
+      "fileCount": 0,
+      "lastAccessed": 1792956410201,
+      "keyFiles": []
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 2,
+      "lastAccessed": 1792956410201,
+      "keyFiles": [
+        "icons-sprite.svg"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 5,
+      "lastAccessed": 1792956410202,
+      "keyFiles": [
+        "Button.ts",
+        "Container.ts",
+        "FlexWrapper.ts"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "cv/cv_ru_fullstack.html",
+      "accessCount": 12,
+      "lastAccessed": 1792957440806,
+      "type": "file"
+    },
+    {
+      "path": "src/layout/section/main/Main_Styles.ts",
+      "accessCount": 3,
+      "lastAccessed": 1792960965005,
+      "type": "file"
+    },
+    {
+      "path": "cv/cv_ru.html",
+      "accessCount": 1,
+      "lastAccessed": 1792957028371,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

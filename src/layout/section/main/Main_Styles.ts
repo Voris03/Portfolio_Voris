@@ -58,19 +58,53 @@ const Name = styled.h2`
   }
 `;
 
-const Photo = styled.img`
+const SloganCard = styled.div`
   width: 350px;
   height: 430px;
-  object-fit: cover;
   margin-right: 20px;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: ${theme.colors.secondBg};
+  text-align: left;
 
   @media ${theme.media.mobile} {
     width: 310px;
     height: 380px;
+    padding: 32px 24px;
   }
 `;
 
-const PhotoWrapper = styled.div`
+const CodeMark = styled.span`
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 40px;
+  font-weight: 700;
+  color: ${theme.colors.accent};
+`;
+
+const SloganText = styled.p`
+  ${font({
+    family: theme.fonts.title,
+    weight: 700,
+    Fmax: 34,
+    Fmin: 28,
+  })}
+  line-height: 1.3;
+
+  span {
+    color: ${theme.colors.accent};
+  }
+`;
+
+const Caption = styled.span`
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+`;
+
+const CardWrapper = styled.div`
   position: relative;
   z-index: 0;
 
@@ -100,6 +134,9 @@ export const S = {
   MainTitle,
   SmallText,
   Name,
-  Photo,
-  PhotoWrapper,
+  SloganCard,
+  CodeMark,
+  SloganText,
+  Caption,
+  CardWrapper,
 };

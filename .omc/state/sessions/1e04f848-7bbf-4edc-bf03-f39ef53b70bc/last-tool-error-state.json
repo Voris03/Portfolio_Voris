@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd /Users/vovavidus/projects/Portfolio_Voris; grep -q '^/cv' .gitignore || printf '\\\\n# CV sources and PDFs (contain personal phone number)\\\\n/cv\\\\n' >> .gitignore; tail -3 .gitignore; CH=...",
+  "error": "Exit code 1\n\n# CV sources and PDFs (contain personal phone number)\n/cv\n(eval):1: bad substitution",
+  "timestamp": "2026-10-21T12:23:24.317Z",
+  "retry_count": 1
+}
