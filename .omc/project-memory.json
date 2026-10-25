@@ -186,6 +186,12 @@
       "accessCount": 1,
       "lastAccessed": 1792957028371,
       "type": "file"
+    },
+    {
+      "path": "src/styles/Global.styled.ts",
+      "accessCount": 1,
+      "lastAccessed": 1792962490448,
+      "type": "file"
     }
   ],
   "userDirectives": []

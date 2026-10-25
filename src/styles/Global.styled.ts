@@ -11,6 +11,14 @@ const GlobalStyle = createGlobalStyle`
         
     }
 
+    // Without a background the rubber-band overscroll shows white;
+    // overscroll-behavior removes the bounce itself where supported
+    html,
+    body {
+        background-color: ${theme.colors.primaryBg};
+        overscroll-behavior-y: none;
+    }
+
     body {
         margin: 0;
         font-family: ${theme.fonts.main};
